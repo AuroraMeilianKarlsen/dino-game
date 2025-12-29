@@ -1,4 +1,4 @@
-# 🦖 Dino Game
+# Dino Game
 
 A Chrome Dino Game clone built with TypeScript. Can be used as a React component or embedded as a standalone vanilla JS game.
 
@@ -6,12 +6,12 @@ A Chrome Dino Game clone built with TypeScript. Can be used as a React component
 
 ## Features
 
-- 🎮 Classic Chrome Dino gameplay
-- 🦕 Multiple dinosaur animations (running, jumping, ducking)
-- 🌵 Various obstacle types (cacti, birds)
-- 📱 Keyboard and click/tap controls
-- 🎨 Custom sprite assets
-- ⚡ Lightweight and performant
+- Classic Chrome Dino gameplay
+- Multiple dinosaur animations (running, jumping, ducking)
+- Various obstacle types (cacti, birds)
+- Keyboard and click/tap controls
+- Custom sprite assets
+- Lightweight and performant
 
 ## Installation
 
@@ -134,5 +134,5 @@ MIT © Aurora Meilian Karlsen
 
 ---
 
-*Inspired by the Google Chrome Dinosaur Game* 🌵
+*Inspired by the Google Chrome Dinosaur Game* 
 

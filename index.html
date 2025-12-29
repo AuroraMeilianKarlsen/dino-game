@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🦖 Dino Game Demo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        color: #fff;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .subtitle {
+        color: #94a3b8;
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .game-container {
+        background: #f7f7f7;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        max-width: 900px;
+        width: 100%;
+      }
+
+      .game-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .game-title {
+        color: #535353;
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .score {
+        font-size: 20px;
+        color: #535353;
+        margin-bottom: 15px;
+      }
+
+      #game-canvas {
+        border: 2px solid #535353;
+        background: #fff;
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .instructions {
+        color: #535353;
+        margin-top: 15px;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .credit {
+        color: #999;
+        font-size: 11px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .controls {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .control-key {
+        background: #e2e8f0;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-family: monospace;
+        font-size: 14px;
+        color: #475569;
+      }
+
+      .back-link {
+        margin-top: 2rem;
+        color: #94a3b8;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .back-link:hover {
+        color: #fff;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .game-container {
+          padding: 15px;
+        }
+
+        .controls {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🦖 Dino Game</h1>
+    <p class="subtitle">A Chrome Dino Game clone • Press SPACE to start!</p>
+
+    <div class="game-container">
+      <div class="game-header">
+        <h2 class="game-title">Ready to Run?</h2>
+        <div class="score">Score: <strong id="score-display">0</strong></div>
+      </div>
+
+      <canvas id="game-canvas" width="800" height="200"></canvas>
+
+      <div class="instructions" id="instructions">
+        Press SPACE or click to start
+      </div>
+
+      <div class="controls">
+        <span class="control-key">SPACE / ↑ Jump</span>
+        <span class="control-key">↓ Duck</span>
+        <span class="control-key">Click: Jump</span>
+      </div>
+
+      <div class="credit">Inspired by the Google Chrome Dinosaur Game</div>
+    </div>
+
+    <a
+      href="https://github.com/aurorameiliankarlsen/dino-game"
+      class="back-link"
+    >
+      ← View on GitHub
+    </a>
+
+    <script src="dino-game-vanilla.js"></script>
+    <script>
+      const canvas = document.getElementById('game-canvas');
+      const scoreDisplay = document.getElementById('score-display');
+      const instructions = document.getElementById('instructions');
+
+      const game = new DinoGameVanilla(canvas, {
+        assetPath: './assets',
+        onScoreChange: (score) => {
+          scoreDisplay.textContent = score;
+        },
+        onGameOver: (score) => {
+          instructions.textContent =
+            'GAME OVER! Score: ' + score + ' - Press SPACE to try again';
+        },
+        onGameStart: () => {
+          instructions.textContent = 'SPACE/↑: Jump | ↓: Duck';
+        },
+      });
+
+      game.init();
+    </script>
+  </body>
+</html>

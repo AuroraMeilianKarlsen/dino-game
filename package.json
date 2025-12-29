@@ -1,0 +1,56 @@
+{
+  "name": "dino-game",
+  "version": "1.0.0",
+  "description": "A Chrome Dino Game clone built with TypeScript/React - inspired by the classic offline dinosaur game",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "assets"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "demo": "npx serve demo",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "dino-game",
+    "chrome-dino",
+    "t-rex-game",
+    "dinosaur-game",
+    "react",
+    "typescript",
+    "canvas-game",
+    "offline-game"
+  ],
+  "author": "Aurora Meilian Karlsen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aurorameiliankarlsen/dino-game.git"
+  },
+  "homepage": "https://github.com/aurorameiliankarlsen/dino-game#readme",
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0"
+  }
+}
+

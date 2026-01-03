@@ -6,12 +6,11 @@ A Chrome Dino Game clone built with TypeScript. Can be used as a React component
 
 ## Features
 
-- Classic Chrome Dino gameplay
+- Classic Chrome Dino game
 - Multiple dinosaur animations (running, jumping, ducking)
 - Various obstacle types (cacti, birds)
 - Keyboard and click/tap controls
-- Custom sprite assets
-- Lightweight and performant
+- Custom assets drawn in pixelart
 
 ## Installation
 
